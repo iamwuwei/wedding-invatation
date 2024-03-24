@@ -39,8 +39,8 @@ section {
 }
 
 .full-screen {
-    height: 100svh;
-    max-height: 100svh;
+    height: 100vh;
+    max-height: 100vh;
     width: 100%;
 }
 
@@ -65,7 +65,7 @@ section.first .signature-wrapper {
     display: flex;
     flex-direction: column;
     z-index: 100;
-    bottom: 50px;
+    bottom: calc(50px + env(safe-area-inset-bottom));
     right: 30px;
 }
 
