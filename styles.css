@@ -65,7 +65,8 @@ section.first .signature-wrapper {
     display: flex;
     flex-direction: column;
     z-index: 100;
-    bottom: calc(50px + env(safe-area-inset-bottom));
+    bottom: 50px;
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
     right: 30px;
 }
 
