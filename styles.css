@@ -1,0 +1,191 @@
+/* Resetting default margins and paddings */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensuring block-level elements take up the full width */
+body,
+div,
+header,
+footer,
+section,
+article,
+nav,
+aside,
+main {
+    display: block;
+}
+
+:root {
+    --scroll: 0;
+}
+
+main {
+    margin: auto;
+}
+
+
+section {
+    margin: auto;
+
+}
+
+.full-screen {
+    height: 100svh;
+    max-height: 100svh;
+    width: 100%;
+}
+
+section.first {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: max(calc(1 - var(--scroll) * 0.01), 0.2);
+}
+
+section.first .bg-pic-wrapper {
+    transform: scale(1.23);
+    opacity: 1;
+    z-index: 1;
+}
+
+section.first .signature-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    bottom: 50px;
+    right: 30px;
+}
+
+section.first .signature-wrapper .signature-pic-wrapper {
+    margin: auto;
+    width: 30vw;
+    opacity: 0.6;
+}
+
+section.first .signature-wrapper .signature-date {
+    text-align: center;
+    font-size: 8vw;
+    font-weight: bold;
+}
+
+section.first .title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 10px;
+    right: 30px;
+    z-index: 100;
+    opacity: 0.7;
+}
+
+section.first .title h1 {
+    width: 100%;
+    font-size: 15vw;
+}
+
+section.first .title text {
+    font-size: 8vw;
+    text-align: center;
+}
+
+section.second {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+section.second .envelope {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    background-color: #ff9494;
+    width: 360px;
+    height: 225px;
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
+    top: 40svh;
+    transform: scale(min(calc(var(--scroll) * 0.02), 1)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
+    opacity: calc(var(--scroll) * 0.02);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 3;
+}
+
+section.second .envelope .front-flap {
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-bottom: 82px solid transparent;
+    border-top: 150px solid #ff9494;
+    transform-origin: top;
+    z-index: 10;
+    transform: rotateX(min(calc(max((var(--scroll) - 62), 0) * 50deg), 180deg));
+}
+
+section.second .envelope .front-flap.opened {
+    z-index: 4;
+}
+
+section.second .envelope .front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 4;
+    border-left: 180px solid #fbd2d2;
+    border-right: 180px solid #fbd2d2;
+    border-bottom: 135px solid #fbbbbb;
+    border-top: 90px solid transparent;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 6;
+}
+
+section.second .envelope .letter-wrapper {
+    position: absolute;
+    z-index: 5;
+    width: 90%;
+    height: 100%;
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    top: calc(max((var(--scroll) - 66), 0) * -3px);
+}
+
+section.second .envelope .letter-wrapper .letter-pic-container {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+}
+
+section.forth .map-wrapper {
+    width: 100%;
+}
+
+.parisienne-regular {
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 320px) {
+    section.second .envelope {
+        transform: scale(min(calc(var(--scroll) * 0.02), 0.8));
+    }
+}
