@@ -31,11 +31,6 @@ main {
 main {
     margin: auto;
     overflow-x: clip;
-}
-
-
-section {
-    margin: auto;
 
 }
 
@@ -45,13 +40,17 @@ section {
     width: 100%;
 }
 
+.full-screen-4x {
+    height: 400vh;
+    width: 100%;
+}
+
 section.first {
     position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     opacity: max(calc(1 - var(--scroll) * 0.01), 0.2);
 }
 
@@ -117,7 +116,7 @@ section.second .envelope {
     height: 225px;
     filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
     top: 40svh;
-    transform: scale(min(calc(var(--scroll) * 0.02), 1)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
+    transform: scale(min(calc(var(--scroll) * 0.02), 0.95)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
     opacity: calc(var(--scroll) * 0.02);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -149,34 +148,160 @@ section.second .envelope .front {
     border-top: 90px solid transparent;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    z-index: 6;
+    z-index: 9;
 }
 
 section.second .envelope .letter-wrapper {
     position: absolute;
-    z-index: 5;
+    display: flex;
+    flex-direction: column;
     width: 90%;
     height: 100%;
-    background-color: white;
     border-radius: 6px;
+    background-color: transparent;
     overflow: hidden;
+}
+
+section.second .envelope .letter-wrapper img {
+    border-radius: 6px;
+}
+
+section.second .envelope .letter-wrapper.card1 {
+    z-index: 7;
     top: calc(max((var(--scroll) - 66), 0) * -3px);
 }
 
-section.second .envelope .letter-wrapper .letter-pic-container {
-    width: 100%;
+section.second .envelope .letter-wrapper.card2 {
+    z-index: 6;
+    top: calc(max((var(--scroll) - 150), 0) * -3px);
+}
+
+section.second .envelope .letter-wrapper.card3 {
+    z-index: 5;
+    top: calc(max((var(--scroll) - 234), 0) * -3px);
+}
+
+
+section.second .envelope .letter-wrapper.card1.takeout-to-center {
+    top: -55%;
+    width: 130vw;
+    height: auto;
+    z-index: 50;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+section.second .envelope .letter-wrapper.card1.takeout-to-center.takeout-to-below {
+    top: 30%;
+    width: 90%;
     height: 100%;
-    transform: scale(1.2);
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
 }
 
-section.forth .map-wrapper {
-    width: 100%;
+section.second .envelope .letter-wrapper.card2.takeout-to-center {
+    z-index: 51;
+    top: -55%;
+    width: 130vw;
+    height: auto;
+    transition-timing-function: linear;
+    transition: width 1s, height 1s, top 1s;
 }
 
-.parisienne-regular {
-    font-family: "Parisienne", cursive;
-    font-weight: 400;
-    font-style: normal;
+section.second .envelope .letter-wrapper.card2.takeout-to-center.takeout-to-below {
+    top: 50%;
+    width: 90%;
+    height: 100%;
+    transition: width 1s, height 1s, top 1s;
+    transition-timing-function: linear;
+}
+
+section.second .envelope .letter-wrapper.card3.takeout-to-center {
+    z-index: 52;
+    top: -55%;
+    width: 130vw;
+    height: auto;
+    transition-timing-function: linear;
+    transition: width 1s, height 1s, top 1s;
+}
+
+section.second .envelope .letter-wrapper.card3.takeout-to-center.takeout-to-below {
+    top: 70%;
+    width: 90%;
+    height: 100%;
+    transition: width 1s, height 1s, top 1s;
+    transition-timing-function: linear;
+}
+
+section.third {
+    position: relative;
+    background-color: white;
+    padding: 20px 15px 20px 15px;
+    z-index: 20;
+}
+
+section.third .hero1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+section.third .hero2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+section.third .avatar-wrapper {
+    width: 80%;
+}
+
+
+section.third .invatation {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 20px 15px;
+    filter: unset;
+    scroll-snap-align: start;
+}
+
+section.third .invatation h1 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+section.third .invatation p {
+    text-align: left;
+}
+
+section.forth {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: white;
+    z-index: 20;
+    padding: 20px 15px 20px 15px;
+}
+
+section.fifth {
+    position: relative;
+    background-color: white;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px 20px 15px;
+    filter: unset;
+    gap: 10px;
+}
+
+section.fifth h1 {
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .img-contain {
@@ -185,8 +310,206 @@ section.forth .map-wrapper {
     object-fit: contain;
 }
 
+.hearts {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 8;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: '';
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #d00000;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.close .heart {
+    opacity: 0;
+    animation: none;
+}
+
+.a1 {
+    left: 20%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+    animation-fill-mode: forwards;
+}
+
+.a2 {
+    left: 55%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+    animation-fill-mode: forwards;
+}
+
+.a3 {
+    left: 10%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -600px;
+    }
+}
+
+@keyframes sideSway {
+    0% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 50px;
+    }
+}
+
 @media only screen and (max-width: 320px) {
     section.second .envelope {
-        transform: scale(min(calc(var(--scroll) * 0.02), 0.85)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
+        transform: scale(min(calc(var(--scroll) * 0.02), 0.89)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
     }
+}
+
+/* ------- fonts ------- */
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.parisienne-regular {
+    font-family: "Parisienne", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
