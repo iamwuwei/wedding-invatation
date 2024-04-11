@@ -70,18 +70,6 @@ function setCardAnimation(sectionHeightScrolled) {
     }
 }
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            var scrollDiv = document.getElementById("third").offsetTop;
-            window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
-        } else {
-        }
-    })
-})
-
-observer.observe(document.querySelector("#third"))
-
 var countDownDate = new Date("July 6, 2024 00:00:00").getTime();
 
 var countdownTimer = setInterval(function () {
