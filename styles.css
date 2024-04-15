@@ -108,7 +108,7 @@ section.second .envelope {
     width: 360px;
     height: 225px;
     filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
-    top: 40svh;
+    top: 30svh;
     transform: scale(min(calc(var(--scroll) * 0.02), 0.95)) rotate(min(calc(var(--scroll) * 5.7deg), 360deg));
     opacity: calc(var(--scroll) * 0.02);
     border-bottom-left-radius: 10px;
@@ -250,6 +250,14 @@ section.third .hero .hero-pic {
 
 section.third .hero .hero-pic .avatar-wrapper {
     width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+section.third .hero .hero-pic .avatar-wrapper .bride {
+    position: absolute;
+    top: 42px;
+    left: -35px;
 }
 
 section.third .hero .hero-name {
@@ -261,6 +269,7 @@ section.third .hero .hero-name {
 }
 
 section.third .hero .hero-name .groom-name-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100px;
@@ -268,6 +277,14 @@ section.third .hero .hero-name .groom-name-wrapper {
 }
 
 section.third .hero .hero-name .groom-name-wrapper h1 {
+    letter-spacing: 0.8rem;
+    text-align: right;
+    color: rgba(40, 39, 39, 0.631);
+}
+
+section.third .hero .hero-name .groom-name-wrapper p {
+    font-size: 2rem;
+    font-weight: bolder;
     text-align: center;
 }
 
@@ -279,6 +296,15 @@ section.third .hero .hero-name .bride-name-wrapper {
 }
 
 section.third .hero .hero-name .bride-name-wrapper h1 {
+    color: rgba(40, 39, 39, 0.631);
+    letter-spacing: 0.8rem;
+    text-align: center;
+}
+
+section.third .hero .hero-name .bride-name-wrapper p {
+    font-size: 2rem;
+    letter-spacing: 0.8rem;
+    font-weight: bolder;
     text-align: center;
 }
 
