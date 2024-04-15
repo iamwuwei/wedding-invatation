@@ -256,8 +256,8 @@ section.third .hero .hero-pic .avatar-wrapper {
 
 section.third .hero .hero-pic .avatar-wrapper .bride {
     position: absolute;
-    top: 42px;
-    left: -35px;
+    top: 23px;
+    left: -15px;
 }
 
 section.third .hero .hero-name {
@@ -459,6 +459,12 @@ section.fifth h1 {
         margin-left: auto;
         width: 20vw;
         opacity: 0.6;
+    }
+
+    section.third .hero .hero-pic .avatar-wrapper .bride {
+        position: absolute;
+        top: 42px;
+        left: -35px;
     }
 
     section.forth .countdown {
