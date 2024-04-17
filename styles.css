@@ -245,7 +245,7 @@ section.third .hero {
 section.third .hero .hero-pic {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+    gap: 5px;
 }
 
 section.third .hero .hero-pic .avatar-wrapper {
@@ -255,9 +255,14 @@ section.third .hero .hero-pic .avatar-wrapper {
 }
 
 section.third .hero .hero-pic .avatar-wrapper .bride {
+    scale: 1.05;
+}
+
+section.third .hero .hero-pic .avatar-wrapper .groom{
     position: absolute;
-    top: 23px;
-    left: -15px;
+    scale: 1.2;
+    top: -17px;
+    right: 13px;
 }
 
 section.third .hero .hero-name {
@@ -462,9 +467,14 @@ section.fifth h1 {
     }
 
     section.third .hero .hero-pic .avatar-wrapper .bride {
+        scale: 1.05;
+    }
+
+    section.third .hero .hero-pic .avatar-wrapper .groom{
         position: absolute;
-        top: 42px;
-        left: -35px;
+        scale: 1.2;
+        top: -30px;
+        right: 25px;
     }
 
     section.forth .countdown {
